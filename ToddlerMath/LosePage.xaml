@@ -1,0 +1,96 @@
+﻿<!-- File: LosePage.xaml -->
+<!-- Author: Frank Meana -->
+<!-- Date: December 01, 2017 -->
+<!-- Description: Page displaying the Lose screen seen when a player loses all lives -->
+    
+    <!-- Page Properties -->
+    <Page x:Class="ToddlerMath.LosePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ToddlerMath"
+      mc:Ignorable="d"
+      d:DesignHeight="768"
+      d:DesignWidth="1024"
+      Title="LosePage">
+    
+    <!-- A border for beautifying the GUI -->
+    <Border Padding="50, 50, 50, 50">
+      
+      <!-- Main stack panel that places components vertically -->
+      <StackPanel>
+
+        <!-- Label that contains sorry and the name of the player -->
+        <Label x:Name="sorryLabel"
+               Content="Sorry Buddy"
+               Height="114"
+               FontFamily="Showcard Gothic"
+               FontSize="72"
+               Foreground="#FFFF3D2E"
+                   HorizontalContentAlignment="Center" />
+            
+            <!-- Label containing the text You Lost -->
+            <Label x:Name="losingLabel"
+                   Content="You Lost"
+                   Height="114"
+                   FontFamily="Showcard Gothic"
+                   FontSize="48"
+                   Foreground="#FFFF3D2E"
+                   HorizontalContentAlignment="Center" />
+
+            <!-- Sad face image -->
+            <Image Source="Images/lose.png"
+                   Width="200" />
+
+            <!-- Button that allows player to play again -->
+            <Button x:Name="playAgainButton"
+                    Content="Play Again"
+                    Margin="355,20,342.2,0"
+                    Height="40"
+                    FontFamily="Showcard Gothic"
+                    FontSize="24"
+                    Foreground="#FF6425A5"
+                    Click="PlayAgainButtonClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3"
+                                      Offset="0" />
+                        <GradientStop Color="#FFEBEBEB"
+                                      Offset="0.5" />
+                        <GradientStop Color="#FFDDDDDD"
+                                      Offset="0.5" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <!-- Button that allows player to view Highscores from database -->
+            <Button x:Name="highScoresButton"
+                    Content="Highscores"
+                    Margin="355,20,342.2,0"
+                    Height="40"
+                    FontFamily="Showcard Gothic"
+                    FontSize="24"
+                    Foreground="#FFFF7700"
+                    Click="highscoresButtonClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3"
+                                      Offset="0" />
+                        <GradientStop Color="#FFEBEBEB"
+                                      Offset="0.5" />
+                        <GradientStop Color="#FFDDDDDD"
+                                      Offset="0.5" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+    </Border>
+</Page>

@@ -1,0 +1,121 @@
+﻿<!-- File: WinPage.xaml -->
+<!-- Author: Frank Meana -->
+<!-- Date: December 01, 2017 -->
+<!-- Description: The Page that is displayed when a player wins the game -->
+    
+    <!-- Page Properties -->
+    <Page x:Class="ToddlerMath.WinPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      mc:Ignorable="d"
+      d:DesignHeight="768"
+      d:DesignWidth="1024"
+      Title="WinPage">
+
+    <!-- Border for beautifying GUI -->
+    <Border Padding="50, 50, 50, 50">
+        
+        <!-- Main stack panel that stacks components vertically -->
+        <StackPanel>
+
+            <!-- Label containing the text Congrats and player name -->
+            <Label x:Name="congratsLabel"
+                   Content="Congrats Buddy"
+                   Height="114"
+                   FontFamily="Showcard Gothic"
+                   FontSize="72"
+                   Foreground="#FFDF6F0E"
+                   HorizontalContentAlignment="Center" />
+
+            <!-- Label containing the text You won-->
+            <Label x:Name="winningLabel"
+                   Content="You Won"
+                   Height="114"
+                   FontFamily="Showcard Gothic"
+                   FontSize="48"
+                   Foreground="#FFDF6F0E"
+                   HorizontalContentAlignment="Center" />
+
+            <!-- Thumbs up image -->
+            <Image Source="Images/win.png"
+                   Width="200" />
+            
+
+            <!-- Play again button -->
+            <Button x:Name="playAgainButton"
+                    Content="Play Again"
+                    Margin="355,20,342.2,0"
+                    Height="40"
+                    FontFamily="Showcard Gothic"
+                    FontSize="24"
+                    Foreground="#FF6425A5"
+                    Click="PlayAgainButtonClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3"
+                                      Offset="0" />
+                        <GradientStop Color="#FFEBEBEB"
+                                      Offset="0.5" />
+                        <GradientStop Color="#FFDDDDDD"
+                                      Offset="0.5" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <!-- Highscores button -->
+            <Button x:Name="highScoresButton"
+                    Content="Highscores"
+                    Margin="355,20,342.2,0"
+                    Height="40"
+                    FontFamily="Showcard Gothic"
+                    FontSize="24"
+                    Foreground="#FFFF7700"
+                    Click="HighscoresButtonClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3"
+                                      Offset="0" />
+                        <GradientStop Color="#FFEBEBEB"
+                                      Offset="0.5" />
+                        <GradientStop Color="#FFDDDDDD"
+                                      Offset="0.5" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+            <!-- Secret Dataset button -->
+            <Button x:Name="datasetButton"
+                    Content="Secret Dataset"
+                    Margin="355,20,342.2,0"
+                    Height="40"
+                    FontFamily="Showcard Gothic"
+                    FontSize="24"
+                    Foreground="#FFFF3D2E"
+                    Click="DatasetButtonClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3"
+                                      Offset="0" />
+                        <GradientStop Color="#FFEBEBEB"
+                                      Offset="0.5" />
+                        <GradientStop Color="#FFDDDDDD"
+                                      Offset="0.5" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+    </Border>
+    
+</Page>

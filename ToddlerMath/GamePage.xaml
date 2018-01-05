@@ -1,0 +1,354 @@
+﻿<!-- File: GamePage.xaml -->
+<!-- Author: Frank Meana -->
+<!-- Date: December 01, 2017 -->
+<!-- Description: Page displaying the main game where equations will be display at random -->
+    
+    <!-- Page properties -->
+    <Page x:Class="ToddlerMath.GamePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+      xmlns:local="clr-namespace:ToddlerMath"
+      mc:Ignorable="d"
+      d:DesignHeight="768"
+      d:DesignWidth="1024"
+      Title="GamePage">
+
+    <Border Padding="40,40,40,40">
+
+        <!--Main Panel to place components vertically-->
+        <StackPanel>
+
+            <!-- Panel for displaying score and lives and right answers -->
+            <StackPanel x:Name="statsPanel"
+                        Orientation="Horizontal"
+                        Height="100"
+                        Width="800">
+
+                <!-- Label for the word Correct -->
+                <Label Width="190"
+                       Content="Correct"
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="22"
+                       HorizontalContentAlignment="Right" />
+
+                <!-- Label for the number of correct answers -->
+                <Label x:Name="correctAnswersLabel"
+                       Width="130"
+                       Content="0"
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="22"
+                       HorizontalContentAlignment="Center" />
+                
+                <!-- Images of the initial 3 hearts displayed -->
+                <Image Width="40"
+                       Source="Images/full_heart.png"
+                       VerticalAlignment="Top" />
+
+                <Image Width="40"
+                       Source="Images/full_heart.png"
+                       VerticalAlignment="Top" />
+
+                <Image Width="40"
+                       Source="Images/full_heart.png"
+                       VerticalAlignment="Top" />
+
+                <!-- Label for the word Score -->
+                <Label Width="130"
+                       Content="Score"
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="22"
+                       HorizontalContentAlignment="Right" />
+
+                <!-- Label for the actual number representing the score obtained -->
+                <Label x:Name="scoreLabel"
+                       Width="130"
+                       Content="0"
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="22"
+                       HorizontalContentAlignment="Center" />
+
+            </StackPanel>
+            
+            <!--Panel for the Equation  -->
+            <StackPanel Orientation="Horizontal"
+                        Height="80"
+                        Width="800">
+
+                <!-- Label for the first number generated in the equation -->
+                <Label x:Name="firstNumberLabel"
+                       Width="200"
+                       Height="100"
+                       Content="0"
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="72"
+                       HorizontalAlignment="Left"
+                       HorizontalContentAlignment="Right"
+                       VerticalAlignment="Top"
+                       Foreground="#FFFF3D2E" />
+
+                <!-- Label for the operator generated in the equation -->
+                <Label x:Name="operatorLabel"
+                       Width="150"
+                       Height="100"
+                       VerticalAlignment="Top"
+                       Content="+"
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="72"
+                       HorizontalContentAlignment="Right"
+                       Foreground="#FFFF3D2E" />
+
+                <!-- Label for the second number generated in the equation -->
+                <Label x:Name="secondNumberLabel"
+                       Width="150"
+                       Height="100"
+                       VerticalAlignment="Top"
+                       Content="0"
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="72"
+                       HorizontalContentAlignment="Right"
+                       Foreground="#FFFF3D2E" />
+
+                <!-- Label for the equals sign following the equation -->
+                <Label Width="150"
+                       Height="100"
+                       Content="="
+                       FontFamily="Rockwell Extra Bold"
+                       FontSize="72"
+                       HorizontalContentAlignment="Right"
+                       VerticalAlignment="Top"
+                       Foreground="#FFFF3D2E" />
+
+            </StackPanel>
+
+            <!-- Parent Panel for two Grids Panels that will 
+            Contain potato pictures -->
+            <StackPanel Orientation="Horizontal"
+                        Width="800"
+                        Height="300">
+                
+                <!-- Potato images Grid for first number -->
+                <Grid x:Name="firstNumberPotatoGrid"
+                      Height="180"
+                      Width="250"
+                      VerticalAlignment="Center"
+                      Margin="130,0,0,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--Row 1-->
+                    <Image Grid.Column="0"
+                           Grid.Row="0" />
+
+                    <Image Grid.Column="1"
+                           Grid.Row="0" />
+
+                    <Image Grid.Column="2"
+                           Grid.Row="0" />
+
+                    <!--Row 2-->
+                    <Image Grid.Column="0"
+                           Grid.Row="1" />
+
+                    <Image Grid.Column="1"
+                           Grid.Row="1" />
+
+                    <Image Grid.Column="2"
+                           Grid.Row="1" />
+
+                    <!--Row 3-->
+                    <Image Grid.Column="0"
+                           Grid.Row="2" />
+
+                    <Image Grid.Column="1"
+                           Grid.Row="2" />
+
+                    <Image Grid.Column="2"
+                           Grid.Row="2" />
+
+                </Grid>
+
+                <!-- Potato images Grid for second number -->
+                <Grid x:Name="secondNumberPotatoGrid"
+                      Height="180"
+                      Width="250"
+                      VerticalAlignment="Center"
+                      Margin="50,0,0,0">
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+
+                    </Grid.ColumnDefinitions>
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+
+                    <!--Row 1-->
+                    <Image Grid.Column="0"
+                           Grid.Row="0" />
+
+                    <Image Grid.Column="1"
+                           Grid.Row="0" />
+
+                    <Image Grid.Column="2"
+                           Grid.Row="0" />
+
+                    <!--Row 2-->
+                    <Image Grid.Column="0"
+                           Grid.Row="1" />
+
+                    <Image Grid.Column="1"
+                           Grid.Row="1" />
+
+                    <Image Grid.Column="2"
+                           Grid.Row="1" />
+
+                    <!--Row 3-->
+                    <Image Grid.Column="0"
+                           Grid.Row="2" />
+
+                    <Image Grid.Column="1"
+                           Grid.Row="2" />
+
+                    <Image Grid.Column="2"
+                           Grid.Row="2" />
+
+                </Grid>
+
+            </StackPanel>
+
+            <!--Grid Panel for the Buttons-->
+            <Grid Height="150"
+                  Width="800">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+                
+                
+                <!-- Button Zero -->
+                <Button x:Name="zero"
+                        Grid.Column="0"
+                        Grid.Row="0"
+                        Content="0"
+                        Click="ZeroButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button One -->
+                <Button x:Name="one"
+                        Grid.Column="1"
+                        Grid.Row="0"
+                        Content="1"
+                        Click="OneButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button Two -->
+                <Button x:Name="two"
+                        Grid.Column="2"
+                        Grid.Row="0"
+                        Content="2"
+                        Click="TwoButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button Three -->
+                <Button x:Name="three"
+                        Grid.Column="3"
+                        Grid.Row="0"
+                        Content="3"
+                        Click="ThreeButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button Four -->
+                <Button x:Name="four"
+                        Grid.Column="4"
+                        Grid.Row="0"
+                        Content="4"
+                        Click="FourButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                
+                <!-- second row -->
+                <!-- Button Five -->
+                <Button x:Name="five"
+                        Grid.Column="0"
+                        Grid.Row="1"
+                        Content="5"
+                        Click="FiveButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button Six -->
+                <Button x:Name="six"
+                        Grid.Column="1"
+                        Grid.Row="1"
+                        Content="6"
+                        Click="SixButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button Seven -->
+                <Button x:Name="seven"
+                        Grid.Column="2"
+                        Grid.Row="1"
+                        Content="7"
+                        Click="SevenButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button Eight -->
+                <Button x:Name="eight"
+                        Grid.Column="3"
+                        Grid.Row="1"
+                        Content="8"
+                        Click="EightButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+
+                <!-- Button Nine -->
+                <Button x:Name="nine"
+                        Grid.Column="4"
+                        Grid.Row="1"
+                        Content="9"
+                        Click="NineButtonClicked"
+                        FontFamily="Rockwell Extra Bold"
+                        FontSize="48" />
+            </Grid>
+
+        </StackPanel>
+
+    </Border>
+
+</Page>

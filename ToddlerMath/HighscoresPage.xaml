@@ -1,0 +1,72 @@
+﻿<!-- File: HighscoresPage.xaml -->
+<!-- Author: Frank Meana -->
+<!-- Date: December 01, 2017 -->
+<!-- Description: Page displaying the Highscores stored in the database -->
+    
+    <!-- Page Properties-->
+    <Page x:Class="ToddlerMath.HighscoresPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToddlerMath"
+      mc:Ignorable="d"
+      d:DesignHeight="768"
+      d:DesignWidth="1024"
+      Title="HighscoresPage">
+
+    <!-- Border to add padding for good looks -->    
+    <Border Padding="50, 50, 50, 50">
+        
+        <!-- Main panel that stacks components vertically -->
+        <StackPanel>
+
+            <!-- Label displaying big Orange word Highscores -->
+            <Label x:Name="highscoresLabel"
+                   Content="Highscores"
+                   Height="114"
+                   FontFamily="Showcard Gothic"
+                   FontSize="72"
+                   Foreground="#FFFF7700"
+                   HorizontalContentAlignment="Center" />
+
+            <!-- The DataGrid that contains the top 7 scores in the database -->
+            <DataGrid x:Name="highScoresDataGrid"
+                      FontFamily="Comic Sans MS"
+                      FontSize="36"
+                      Height="450"
+                      Foreground="#FFFF3D2E"
+                      MaxColumnWidth="1000"
+                      MinColumnWidth="450"
+                      CanUserAddRows="False"
+                      Background="{x:Null}"
+                      BorderBrush="{x:Null}" />
+
+            <!-- The back button that takes the player back to the Page that invoked this Page -->
+            <Button x:Name="backButton"
+                    Content="Back"
+                    Margin="355,20,342.2,0"
+                    Height="40"
+                    FontFamily="Showcard Gothic"
+                    FontSize="24"
+                    Foreground="#FFFF3D2E"
+                    Click="BackButtonClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3"
+                                      Offset="0" />
+                        <GradientStop Color="#FFEBEBEB"
+                                      Offset="0.5" />
+                        <GradientStop Color="#FFDDDDDD"
+                                      Offset="0.5" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+    </Border>
+
+</Page>

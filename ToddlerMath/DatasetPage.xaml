@@ -1,0 +1,94 @@
+﻿<!-- File: DatasetPage.xaml -->
+<!-- Author: Frank Meana -->
+<!-- Date: December 01, 2017 -->
+<!-- Description: Page displaying the Secret Dataset that is read from the CSV -->
+    
+    <!-- Page properties -->
+    <Page x:Class="ToddlerMath.DatasetPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ToddlerMath"
+      mc:Ignorable="d"
+      d:DesignHeight="768"
+      d:DesignWidth="1024"
+      Title="DatasetPage">
+
+    <!-- Border -->
+    <Border Padding="20, 50, 20, 50">
+        
+        <!-- Main panel that stacks components vertically-->
+        <StackPanel>
+
+            <!-- Label at the top containing red words "Potato Dataset" -->
+            <Label x:Name="highscoresLabel"
+                   Content="Potato Dataset"
+                   Height="114"
+                   FontFamily="Showcard Gothic"
+                   FontSize="72"
+                   Foreground="#FFFF3D2E"
+                   HorizontalContentAlignment="Center" />
+            
+            <!-- DataGrid where all of the dataset read from the CSV will appear in purple colors -->
+            <DataGrid x:Name="secretDataGrid"
+                      AutoGenerateColumns="False"
+                      FontFamily="Comic Sans MS"
+                      FontSize="14"
+                      Height="450"
+                      Foreground="#FF6425A5"
+                      MinColumnWidth="145"
+                      CanUserAddRows="False"
+                      FontWeight="Bold">
+                
+                <!-- Specify the contents of the columns headers and what data they are bound to -->
+                <DataGrid.Columns>
+                    
+                    <DataGridTextColumn Header="Ref_Date"
+                                        Binding="{Binding Ref_Date}"/>
+                    
+                    <DataGridTextColumn Header="GEO"
+                                        Binding="{Binding GEO}" />
+
+                    <DataGridTextColumn Header="EST"
+                                        Binding="{Binding EST}" />
+                    
+                    <DataGridTextColumn Header="Vector"
+                                        Binding="{Binding Vector}" />
+                    
+                    <DataGridTextColumn Header="Coordinate"
+                                        Binding="{Binding Coordinate}" />
+                    
+                    <DataGridTextColumn Header="Value"
+                                        Binding="{Binding Value}" />
+                </DataGrid.Columns>
+            </DataGrid>
+
+            
+            <!-- The back button that goes back to the Win Page -->
+            <Button x:Name="backButton"
+                    Content="Back"
+                    Margin="355,20,342.2,0"
+                    Height="40"
+                    FontFamily="Showcard Gothic"
+                    FontSize="24"
+                    Foreground="#FFFF3D2E"
+                    Click="BackButtonClicked">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0,1"
+                                         StartPoint="0,0">
+                        <GradientStop Color="#FFF3F3F3"
+                                      Offset="0" />
+                        <GradientStop Color="#FFEBEBEB"
+                                      Offset="0.5" />
+                        <GradientStop Color="#FFDDDDDD"
+                                      Offset="0.5" />
+                        <GradientStop Color="White"
+                                      Offset="1" />
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+
+        </StackPanel>
+    </Border>
+</Page>
